@@ -49,9 +49,11 @@ def file_rows(path: str):
             yield row
 
 
-def _parse_key_value_row(key: str, value: str,  result_dict: Dict) -> None:
-    key: str = key.strip(':')
-    value: str = value.strip()
+def _parse_key_value_row(key: str,
+                         value: str,
+                         result_dict: Dict) -> None:
+    key = key.strip(':')
+    value = value.strip()
     if result_dict.get(key):
         if value not in result_dict[key]:
             result_dict[key].append(value)
